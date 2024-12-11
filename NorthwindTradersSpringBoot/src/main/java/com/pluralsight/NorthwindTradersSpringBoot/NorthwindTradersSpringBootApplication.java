@@ -1,11 +1,12 @@
 package com.pluralsight.NorthwindTradersSpringBoot;
 
+import com.pluralsight.NorthwindTradersSpringBoot.dao.interfaces.ProductDAO;
+import com.pluralsight.NorthwindTradersSpringBoot.models.Product;
+import com.pluralsight.NorthwindTradersSpringBoot.utilities.Console;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
@@ -17,6 +18,11 @@ public class NorthwindTradersSpringBootApplication {
 	public static void main(String[] args) {
 
 		appContenxt = SpringApplication.run(NorthwindTradersSpringBootApplication.class, args);
+
+		for (String bean : appContenxt.getBeanDefinitionNames()){
+			System.out.println(bean);
+		}
+
 		productDAO = appContenxt.getBean(ProductDAO.class);
 
 		String options = """
