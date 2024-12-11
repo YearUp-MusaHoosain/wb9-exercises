@@ -17,9 +17,8 @@ public class NorthwindTradersSpringBootApplication {
 	public static void main(String[] args) {
 
 		appContenxt = SpringApplication.run(NorthwindTradersSpringBootApplication.class, args);
-		productDAO = new SimpleProductDao();
+		productDAO = appContenxt.getBean(ProductDAO.class);
 
-//		productDAO = appContenxt.getBean();
 		String options = """
                 Please select from the following choices:
                 1 - Add Product
@@ -52,8 +51,6 @@ public class NorthwindTradersSpringBootApplication {
 	}
 
 	private static void processAddProduct() {
-		 productDAO = new SimpleProductDao();
-
 		int productId = Console.PromptForInt("Please enter the Product ID: ");
 		String name = Console.PromptForString("Please enter the Product Name: ");
 		String category = Console.PromptForString("Please enter the Category: ");
