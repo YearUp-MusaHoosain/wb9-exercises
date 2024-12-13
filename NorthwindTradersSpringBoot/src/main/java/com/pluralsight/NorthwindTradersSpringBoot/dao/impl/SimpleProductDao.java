@@ -2,6 +2,7 @@ package com.pluralsight.NorthwindTradersSpringBoot.dao.impl;
 
 import com.pluralsight.NorthwindTradersSpringBoot.models.Product;
 import com.pluralsight.NorthwindTradersSpringBoot.dao.interfaces.ProductDAO;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

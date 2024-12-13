@@ -43,6 +43,8 @@ public class NorthwindApplication implements CommandLineRunner {
         } while (true);
     }
 
+
+
     private void processGetAllProducts() {
         List<Product> products = productDAO.getAll();
 
@@ -59,5 +61,7 @@ public class NorthwindApplication implements CommandLineRunner {
         Product p1 = new Product(productId, name, category, price);
 
         productDAO.add(p1);
+
+        System.out.println("Added product: \n" + p1);
     }
 }
